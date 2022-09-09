@@ -3,36 +3,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //Değişkenleri oluştur
-        int mat, fizik, kimya, turkce, tarih, muzik;
+        int kenar1, kenar2, kenar3;
         // Scanner sınıfımızı tanımladık
         Scanner inp = new Scanner(System.in);
 
         //Kullanıcıdam değerleri al
-        System.out.print("Matematik Notunuz : ");
-        mat = inp.nextInt();
+        System.out.print("kenar 1 : ");
+        kenar1 = inp.nextInt();
 
-        System.out.print("Fizik Notunuz : ");
-        fizik = inp.nextInt();
+        System.out.print("kenar 2: ");
+        kenar2 = inp.nextInt();
 
-        System.out.print("Kimya Notunuz : ");
-        kimya = inp.nextInt();
+        System.out.print("kenar 3 :");
+        kenar3 = inp.nextInt();
 
-        System.out.print("Türkçe Notunuz : ");
-        turkce = inp.nextInt();
 
-        System.out.print("Tarih Notunuz : ");
-        tarih = inp.nextInt();
 
-        System.out.print("Müzik Notunuz : ");
-        muzik = inp.nextInt();
+        double u = (kenar3 + kenar2 +kenar1)/2;
+        double alan = Math.sqrt(u * (u-kenar3) * (u-kenar2) * (u - kenar1));
+        System.out.print("Alan =" + alan);
 
-        int toplam = (mat + fizik + kimya + turkce + tarih + muzik);
-        double sonuc = toplam / 6.0;
 
-        System.out.print("Ortalamanız : " + sonuc);
 
-        String str = (sonuc >= 60) ? "Sınıfı Geçti" : "Sınıfı Geçemedi";
-        System.out.print(str);
 
 
     }
