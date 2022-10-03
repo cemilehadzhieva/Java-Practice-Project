@@ -4,33 +4,46 @@ import java.util.Scanner;
 public class yildiz {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Basamak sayısını giriniz :");
-        int n = input.nextInt();
-
-
-
-        for (int i = 1; i <= 6; i++){
-            for (int k = 1; k <= (n-i); k++){
-                System.out.print(" ");
-                }
-            for (int l = 1; l <= (2*i) - 1; l++){
-                System.out.print("*");
-
+        int n1,n2;
+        boolean a = false;
+        do {
+            System.out.print("n1 sayısını giriniz :");
+            n1 = input.nextInt();
+            System.out.print("n2 sayısını giriniz :");
+            n2 = input.nextInt();
+            if (n1 <= 0 || n2 <= 0){
+                System.out.println("Pozitif sayılar giriniz.");
+            } else {
+                a = true;
             }
-            System.out.println();
+
+
+        } while (!a);
+        if (n2 < n1){
+            int tempN2 = n2;
+            n2 = n1;
+            n1 = tempN2;
 
         }
+        int i = n1;
+        while (i >= 1){
+            if ((n1 % i ==0) && (n2 % i == 0)){
+                System.out.println("ebob :" + i);
+                break;
 
-        for(int j = 5; j > 0; j--){
-            for(int m = 5; m>= j; m--){
-                System.out.print(" ");
+
+            }else{
+                i--;
             }
-            for (int g = (2*j) - 1; g >= 1; g-- ){
-                System.out.print("*");
+        }
+        int j = n2;
+        while (j <= (n1*n2)){
+            if ((j % n1 == 0) && (j % n2 == 0)){
+                System.out.println("ekok :" + j);
+                break;
+            }else {
+                j++;
             }
-            System.out.println();
-
-
         }
 
     }
